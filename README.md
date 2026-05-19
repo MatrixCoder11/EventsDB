@@ -40,22 +40,26 @@
 ---
 
 ## Структура проекту
+
+```
 EventsDB/
+├── assets/                         # Скріншоти для документації
 ├── Data/
-│   └── DatabaseContext.cs      # З'єднання з БД, SQL-запити
+│   └── DatabaseContext.cs          # З'єднання з БД, SQL-запити
 ├── Helpers/
-│   └── Validator.cs            # Валідація формату часу і дати
+│   └── Validator.cs                # Валідація формату часу і дати
 ├── Models/
-│   ├── Record.cs               # Модель події
-│   └── User.cs                 # Модель користувача
+│   ├── Record.cs                   # Модель події
+│   └── User.cs                     # Модель користувача
 ├── Repositories/
-│   └── EventRepository.cs      # Патерн Repository для подій
+│   └── EventRepository.cs          # Патерн Repository для подій
 ├── Services/
-│   ├── AuthService.cs          # Логін, реєстрація, хешування
-│   └── SessionService.cs       # Поточна сесія користувача
-├── App.xaml / App.xaml.cs      # Точка входу, ініціалізація
-├── LoginWindow.xaml/.cs        # Вікно авторизації
-└── MainWindow.xaml/.cs         # Головне вікно застосунку
+│   ├── AuthService.cs              # Логін, реєстрація, хешування
+│   └── SessionService.cs           # Поточна сесія користувача
+├── App.xaml / App.xaml.cs          # Точка входу, ініціалізація
+├── LoginWindow.xaml/.cs            # Вікно авторизації
+└── MainWindow.xaml/.cs             # Головне вікно застосунку
+```
 
 ---
 
