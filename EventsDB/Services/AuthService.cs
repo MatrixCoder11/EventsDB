@@ -1,11 +1,12 @@
-﻿using System.Security.Cryptography;
-using System.Text;
-using EventsDB.Data;
+﻿using EventsDB.Data;
+using EventsDB.Interfaces;
 using EventsDB.Models;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace EventsDB.Services;
 
-public class AuthService
+public class AuthService : IAuthService
 {
     private readonly DatabaseContext _db;
 
@@ -29,7 +30,7 @@ public class AuthService
         return hash == user.PasswordHash ? user : null;
     }
 
-    public void Register(string username, string password, string role = "Viewer")
+    public void Register(string username, string password, UserRole role = UserRole.Viewer)
     {
         var user = new User
         {

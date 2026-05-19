@@ -1,6 +1,7 @@
-﻿using System.Windows;
-using EventsDB.Data;
+﻿using EventsDB.Data;
+using EventsDB.Models;
 using EventsDB.Services;
+using System.Windows;
 
 namespace EventsDB;
 
@@ -16,7 +17,7 @@ public partial class App : Application
         if (!db.HasAnyUsers())
         {
             var auth = new AuthService(db);
-            auth.Register("admin", "admin123", "Admin");
+            auth.Register("admin", "admin123", UserRole.Admin);
         }
 
         var loginWindow = new LoginWindow(db);

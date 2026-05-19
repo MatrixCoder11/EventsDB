@@ -180,7 +180,7 @@ public class DatabaseContext : IDisposable
             Id = reader.GetInt32(0),
             Username = reader.GetString(1),
             PasswordHash = reader.GetString(2),
-            Role = reader.GetString(3)
+            Role = Enum.Parse<UserRole>(reader.GetString(3))
         };
     }
 
@@ -193,7 +193,7 @@ public class DatabaseContext : IDisposable
         using var cmd = CreateCommand(sql);
         cmd.Parameters.AddWithValue("@username", user.Username);
         cmd.Parameters.AddWithValue("@passwordHash", user.PasswordHash);
-        cmd.Parameters.AddWithValue("@role", user.Role);
+        cmd.Parameters.AddWithValue("@role", user.Role.ToString());
         cmd.ExecuteNonQuery();
     }
 

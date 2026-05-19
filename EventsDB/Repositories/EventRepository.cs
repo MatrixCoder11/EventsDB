@@ -1,10 +1,11 @@
 using EventsDB.Data;
+using EventsDB.Interfaces;
 using EventsDB.Models;
 
 namespace EventsDB.Repositories;
 
 
-public class EventRepository
+public class EventRepository : IEventRepository
 {
     private readonly DatabaseContext _db;
 

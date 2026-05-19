@@ -6,7 +6,7 @@ public static class SessionService
 {
     public static User? CurrentUser { get; private set; }
 
-    public static bool IsAdmin => CurrentUser?.Role == "Admin";
+    public static bool IsAdmin => CurrentUser?.Role == UserRole.Admin;
 
     public static void Login(User user)
     {
