@@ -1,0 +1,22 @@
+﻿# Build outputs
+bin/
+obj/
+
+# Database file 
+*.db
+*.db-shm
+*.db-wal
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docview
+
+# Rider
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
