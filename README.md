@@ -10,7 +10,7 @@
 - **UI фреймворк:** WPF (Windows Presentation Foundation)
 - **База даних:** SQLite через `Microsoft.Data.Sqlite`
 - **Хешування паролів:** SHA-256
-- **Патерни:** Repository, Service Layer, Layered Architecture
+- **Патерни:** MVVM (Model-View-ViewModel), Repository, Service Layer, Layered Architecture
 
 ---
 
@@ -51,6 +51,11 @@ EventsDB/
 ├── Models/
 │   ├── Record.cs                   # Модель події
 │   └── User.cs                     # Модель користувача
+├── ViewModels/                     # Логіка презентації (Паттерн MVVM)
+│   ├── ViewModelBase.cs            # Базовий клас із реалізацією INotifyPropertyChanged
+│   ├── RelayCommand.cs             # Реалізація інтерфейсу ICommand для подій кнопок
+│   ├── LoginViewModel.cs           # Модель-представлення вікна авторизації
+│   └── MainViewModel.cs            # Модель-представлення головного вікна
 ├── Repositories/
 │   └── EventRepository.cs          # Патерн Repository для подій
 ├── Services/
