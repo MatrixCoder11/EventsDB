@@ -216,8 +216,14 @@ namespace EventsDB
             if (confirm != MessageBoxResult.Yes) return;
 
             SessionService.Logout();
+
+            // 1. Перемикаємо режим, щоб закриття поточного вікна не завершило роботу програми
             Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
+            // 2. Закриваємо поточне головне вікно відразу (воно зникне з екрану та звільнить ресурси)
+            this.Close();
+
+            // 3. Створюємо новий контекст та відкриваємо вікно авторизації
             var db = new DatabaseContext();
             var loginWindow = new LoginWindow(db);
             var loginResult = loginWindow.ShowDialog();
@@ -229,12 +235,11 @@ namespace EventsDB
                 return;
             }
 
+            // 4. Якщо вхід успішний, створюємо та показуємо нове головне вікно
             var newMain = new MainWindow(db);
             Application.Current.MainWindow = newMain;
             Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
             newMain.Show();
-
-            this.Close(); 
         }
     }
 }
