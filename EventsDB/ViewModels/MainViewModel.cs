@@ -17,21 +17,17 @@ namespace EventsDB.ViewModels
         private readonly DatabaseContext _db;
         private readonly EventRepository _repo;
 
-        // Поля для форми введення
         private string _time = string.Empty;
         private string _date = string.Empty;
         private string _location = string.Empty;
         private string _name = string.Empty;
 
-        // Поля для пошуку та сортування
         private string _searchText = string.Empty;
         private int _selectedSearchType = 0;
         private int _selectedSortType = 0;
 
-        // Виділений рядок у таблиці
         private Record? _selectedRecord;
 
-        // Список записів для DataGrid
         private ObservableCollection<Record> _records = new();
 
         #region Властивості для зв'язування (Properties)
